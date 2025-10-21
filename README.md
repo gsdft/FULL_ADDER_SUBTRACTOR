@@ -38,18 +38,73 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+FULL ADDER
+
+<img width="348" height="301" alt="image" src="https://github.com/user-attachments/assets/fe318bf8-12c3-4d66-afdb-ed54c4b4285c" />
+
+FULL SUBRACTOR
+
+<img width="346" height="235" alt="image" src="https://github.com/user-attachments/assets/7f5db924-d0ec-4df7-9f9a-e4254293602a" />
+
 **Procedure**
 
-Write the detailed procedure here
+ 1. Type the program in Quartus software.
+ 2. Compile and run the program.
+ 3. Generate the RTL schematic and save the logic diagram.
+ 4. Create nodes for inputs and outputs to generate the timing diagram.
+ 5. For different input combinations generate the timing diagram.
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
 
+ i)FULL ADDER
+ 
+ module fa(a,b,cin,sum,carry);
+
+  input a,b,cin;
+  
+ output sum,carry;
+ 
+ assign sum=( (a ^ b)^cin);
+ 
+ assign carry= ( (a & b)| ( cin &(a ^ b )));
+ 
+ endmodule
+ 
+ ii)FULL SUBTRACTOR
+ 
+ module fs(a,b,bin,difference,borrow);
+ 
+ input a,b,bin;
+ 
+ output difference,borrow;
+ 
+ assign difference= ( (a ^ b)^bin);
+ 
+ assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+ 
+ endmodule
+ 
 **RTL Schematic**
 
+FULL ADDER
+
+<img width="588" height="307" alt="image" src="https://github.com/user-attachments/assets/dc4d9049-a9c3-4af8-b9a3-ec3223b33603" />
+
+FULL SUBTRACTOR
+
+<img width="582" height="311" alt="image" src="https://github.com/user-attachments/assets/615dd2c1-62f6-4b84-9cdc-731855e0a6b6" />
+
 **Output Timing Waveform**
+
+FULL ADDER
+
+<img width="596" height="308" alt="image" src="https://github.com/user-attachments/assets/93366a61-015a-42aa-a98a-7d19b75919c1" />
+
+FULL SUBRACTOR
+
+<img width="595" height="312" alt="image" src="https://github.com/user-attachments/assets/7dd28faa-385f-466b-ac3a-b4128e474102" />
 
 **Result:**
 
